@@ -175,8 +175,8 @@
   <h4>The PHPINFO page is <a href="./info.php">here</a></h4>
   <h5>Document for
   <ul>
-  <li><a href="https://github.com/Uchida16104">GitHub</a></li>
-  <li><a href="https://glitch.com/@Uchida16104">Glitch</a></li>
+  <li><a href="https://github.com/Uchida16104/Gradations">GitHub</a></li>
+  <li><a href="https://glitch.com/~gradations">Glitch</a></li>
   </h5>
   <p>Written by <a href="https://lit.link/hirotoshiuchida">Hirotoshi Uchida</a>.</p>
 </body>
