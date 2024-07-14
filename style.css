@@ -1,0 +1,6 @@
+div,
+table,
+tr,
+td {
+    background-image: repeating-linear-gradient(aquamarine, transparent, cyan);
+}
