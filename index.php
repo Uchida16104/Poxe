@@ -35,7 +35,7 @@
   </script>
   <script src="https://cdn.opalrb.com/opal/0.8.1/opal.js">
   </script>
-  <script src="http://cdn.opalrb.org/opal/0.8.0/native.js">
+  <script src="https://cdn.opalrb.org/opal/0.8.0/native.js">
   </script>
   <script src="https://cdn.opalrb.com/opal/0.8.1/opal-parser.js">
   </script>
