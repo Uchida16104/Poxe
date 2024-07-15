@@ -29,15 +29,16 @@
   <link rel="stylesheet/sass" type="text/sass" href="./style.sass">
   <link rel="stylesheet/scss" type="text/scss" href="./style.scss">
   <link rel="stylesheet/less" type="text/less" href="./style.less">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js">
+  </script>
+  <script type="text/javascript" src="./script.js">
+  </script>
   <script src="https://cdn.opalrb.com/opal/0.8.1/opal.js">
   </script>
   <script src="http://cdn.opalrb.org/opal/0.8.0/native.js">
   </script>
   <script src="https://cdn.opalrb.com/opal/0.8.1/opal-parser.js">
   </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js">
-  </script>
-  <script type="text/javascript" src="./script.js">
   <script type="text/javascript">
   Opal.load("opal-parser");
   </script>
