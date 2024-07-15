@@ -6,15 +6,18 @@
   <meta http-equiv="X-UA-Compatible" , content="IE=edge" />
   <meta http-equiv="Content-Style-Type" , content="text/css" />
   <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Article",
+      "mainEntityOfPage": "https://gradations.glitch.me/",
+      "headline": "Gradations",
+      "description": "This is mainly written by PHP.",
+      "datePublished": "2024-07-14",
+      "dateModified": "now()"
+    }
+  </script>
   <script defer src="https://pyscript.net/latest/pyscript.js">
-  </script>
-  <script src="https://cdn.opalrb.com/opal/0.8.1/opal.js">
-  </script>
-  <script src="http://cdn.opalrb.org/opal/0.8.0/native.js">
-  </script>
-  <script src="https://cdn.opalrb.com/opal/0.8.1/opal-parser.js">
-  </script>
-  <script src='https://github.com/fengari-lua/fengari-web/releases/download/v0.1.4/fengari-web.js'>
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.11.1/sass.sync.min.js">
   </script>
@@ -26,6 +29,12 @@
   <link rel="stylesheet/sass" type="text/sass" href="./style.sass">
   <link rel="stylesheet/scss" type="text/scss" href="./style.scss">
   <link rel="stylesheet/less" type="text/less" href="./style.less">
+  <script src="https://cdn.opalrb.com/opal/0.8.1/opal.js">
+  </script>
+  <script src="http://cdn.opalrb.org/opal/0.8.0/native.js">
+  </script>
+  <script src="https://cdn.opalrb.com/opal/0.8.1/opal-parser.js">
+  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js">
   </script>
   <script type="text/javascript" src="./script.js">
@@ -59,6 +68,8 @@
     return pkg["../.."].main();
   })()
   </script>
+  <script src='https://github.com/fengari-lua/fengari-web/releases/download/v0.1.4/fengari-web.js'>
+  </script>
   <script type="application/lua">
     local js = require "js"
     local window = js.global
@@ -72,17 +83,6 @@
     cheerpjCreateDisplay(800, 600);
     await cheerpjRunJar("./app.jar");
   })();
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org/",
-      "@type": "Article",
-      "mainEntityOfPage": "https://uchida16104.github.io/",
-      "headline": "PHP localStorage",
-      "description": "This will be used for localStorage.",
-      "datePublished": "2024-07-14",
-      "dateModified": "now()"
-    }
   </script>
   <?php
   $GLOBALS['title'] = 'Gradations';
