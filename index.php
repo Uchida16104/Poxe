@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset='utf-8' />
@@ -22,7 +23,7 @@
   </script>
   <script src="https://unpkg.com/@neos21/in-browser-sass@1.0.8/in-browser-sass.min.js">
   </script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js">
   </script>
   <link rel="stylesheet/css" type="text/css" href="./style.css">
   <link rel="stylesheet/sass" type="text/sass" href="./style.sass">
