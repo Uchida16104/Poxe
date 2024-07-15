@@ -56,18 +56,18 @@
     end
   </script>
   <script type="text/javascript">
-  ;(function() {
-    var pkg = {};
-    pkg["../.."] = (function() {
-      function main () {
-        js.Global.Get("document").Call("write", "Written by Go.")
-      };
-      return {
-        main: main
-      };
-    })();
-    return pkg["../.."].main();
-  })()
+    ;(function() {
+      var pkg = {};
+      pkg["../.."] = (function() {
+        function main () {
+          window.alert("Hello, Go!")
+        };
+        return {
+          main: main
+        };
+      })();
+      return pkg["../.."].main();
+    })()
   </script>
   <script src='https://github.com/fengari-lua/fengari-web/releases/download/v0.1.4/fengari-web.js'>
   </script>
