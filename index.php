@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" , content="IE=edge" />
   <meta http-equiv="Content-Style-Type" , content="text/css" />
   <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js">
+  </script>
   <script type="application/ld+json">
     {
       "@context": "http://schema.org/",
@@ -16,8 +18,6 @@
       "datePublished": "2024-07-14",
       "dateModified": "now()"
     }
-  </script>
-  <script defer src="https://pyscript.net/latest/pyscript.js">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.11.1/sass.sync.min.js">
   </script>
