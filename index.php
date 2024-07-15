@@ -44,14 +44,19 @@
   </script>
   <script type="text/ruby">
     require 'opal'
+    require 'opal_ujs'
+    require 'turbolinks'
     require 'native'
+    require_tree '.'
     ary=Array.new
     srand(100)
+    Document.ready? do
     for i in 0..rand(100) do
     ary.push(rand(100))
-    puts ary
+    Element.find('body').html = '<p>'+ary+'</p>'
     for j in 0..ary.length do 
-    puts "Hello, Ruby."
+    Element.find('body').html = '<p>Hello, Ruby.</p>'
+    end
     end
     end
   </script>
