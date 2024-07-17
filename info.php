@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" , content="IE=edge" />
     <meta http-equiv="Content-Style-Type" , content="text/css" />
     <link rel="stylesheet/css" type="text/css" href="./style.css">
+    <script type="text/javascript" src="./server.js">
+    </script>
     <title>PHP Info</title>
 </head>
 <body>
