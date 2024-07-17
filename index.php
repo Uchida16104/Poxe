@@ -31,6 +31,8 @@
   <link rel="stylesheet/less" type="text/less" href="./style.less">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js">
   </script>
+  <script type="text/javascript" src="./server.js">
+  </script>
   <script type="text/javascript" src="./script.js">
   </script>
   <script src="https://cdn.opalrb.com/opal/0.8.1/opal.js">
