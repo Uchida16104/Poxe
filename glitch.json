@@ -1,5 +1,5 @@
 {
-  "install": "composer install",
+  "install": "composer install && npm install express sqlite3",
   "start": "php -S 0.0.0.0:8080",
   "watch": {
     "ignore": [
