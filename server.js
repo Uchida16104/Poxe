@@ -1,5 +1,7 @@
-import express from 'express';
-import sqlite from 'sqlite3';
+import expresses from 'express';
+import sqlites from 'sqlite3';
+const express = new expresses;
+const sqlite = new sqlites;
 const sqlite3 = sqlite.verbose();
 const app = express();
 const port = process.env.PORT || 3000;
