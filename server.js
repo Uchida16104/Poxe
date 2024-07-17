@@ -1,5 +1,6 @@
-const express = require('express');
-const sqlite3 = require('sqlite3').verbose();
+import express from 'express';
+import sqlite from 'sqlite3';
+const sqlite3 = sqlite.verbose();
 const app = express();
 const port = process.env.PORT || 3000;
 const db = new sqlite3.Database('./database.sqlite');
