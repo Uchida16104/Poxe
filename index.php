@@ -96,7 +96,7 @@
   })();
   </script>
   <?php
-  $GLOBALS['title'] = 'Gradations';
+  $GLOBALS['title'] = 'Noise';
   $GLOBALS['subtitle'] = 'by PHP';
   $GLOBALS['h1'] = rand(36, 40);
   $GLOBALS['h2'] = rand(31, 35);
