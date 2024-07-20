@@ -31,6 +31,10 @@
   <link rel="stylesheet/less" type="text/less" href="./style.less">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js">
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/alasql@4">
+  </script>
+  <script type="text/javascript" src="./sql.js">
+  </script>
   <script type="text/javascript" src="./server.js">
   </script>
   <script type="text/javascript" src="./script.js">
