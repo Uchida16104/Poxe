@@ -37,7 +37,7 @@
   </script>
   <script src="https://unpkg.com/wisp@0.13.0/wisp.js">
   </script>
-  <script type="application/wisp" src="script.wisp">
+  <script type="application/wisp" src="./script.wisp">
   </script>
   <script type="text/javascript" src="./server.js">
   </script>
