@@ -11,6 +11,8 @@
     <link rel="stylesheet/less" type="text/less" href="./style.less">
     <script type="text/javascript" src="./server.js">
     </script>
+    <script type="text/javascript" src="./script.js">
+    </script>
     <title>PHP Info</title>
 </head>
 <body>
