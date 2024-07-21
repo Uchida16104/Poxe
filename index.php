@@ -117,7 +117,7 @@
       document.getElementById('icon-wrapper').style.display = 'none';
       document.getElementById('app-title').style.display = 'none';
     };
-    javaGUI()
+    javaGUI();
   </script>
   <link rel="stylesheet" type="text/css" href="https://cjrtnc.leaningtech.com/3_20230915_194/cheerpj.css" media="screen">
   <script src="https://cjrtnc.leaningtech.com/3_20230915_194/cheerpOS.js">
