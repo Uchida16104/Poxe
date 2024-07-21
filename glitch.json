@@ -1,6 +1,6 @@
 {
   "install": "composer install && npm install express sqlite3 fs path module commander",
-  "start": "node server.js && php -S 0.0.0.0:8080",
+  "start": "php -S 0.0.0.0:8080 && node server.js",
   "watch": {
     "ignore": [
       "logs"
