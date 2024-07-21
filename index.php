@@ -67,14 +67,11 @@
   </script>
   <script>
     async function javaGUI() {
-      setLabel1("Loading Test Swing11");
-      setLabel2("Initializing CheerpJ Runtime...");
       setProgress(10);
       window.cj1 = await cheerpjInit();
       setProgress(50);
       window.cj2 = await cheerpjCreateDisplay(800, 600);
       setProgress(75);
-      setLabel2("Preparing application components...");
       const cj = await cheerpjRunLibrary("./app.jar");
       setProgress(85);
       const CheerpjSwingUtils = await cj.com.jdeploy.cheerpj.CheerpjSwingUtils;      
@@ -177,7 +174,7 @@
     }
   </style>
 </head>
-<body onload="javaGUI()" cz-shortcut-listen="true">
+<body onload="javaGUI()">
   <h1><?php echo $GLOBALS['title']; ?></h1>
   <h2><?php echo $GLOBALS['subtitle']; ?></h2>
   <py-config>
