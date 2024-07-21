@@ -1,2 +1,2 @@
-# Dexim
+# Somsoc
 This is mainly written by PHP.
