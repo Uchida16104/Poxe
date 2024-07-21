@@ -69,7 +69,7 @@
   (async function javaGUI() {
     await cheerpjInit();
     cheerpjCreateDisplay(800, 600);
-    await cheerpjRunJar("./app.jar");
+    await cheerpjRunLibrary("./app.jar");
   })();
   </script>
   <?php
