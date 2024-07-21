@@ -67,13 +67,9 @@
   </script>
   <script>
     async function javaGUI() {
-      setProgress(10);
       window.cj1 = await cheerpjInit();
-      setProgress(50);
       window.cj2 = await cheerpjCreateDisplay(800, 600);
-      setProgress(75);
       const cj = await cheerpjRunLibrary("./app.jar");
-      setProgress(85);
       const CheerpjSwingUtils = await cj.com.jdeploy.cheerpj.CheerpjSwingUtils;      
       async function onWindowResize() {
         document.getElementById("cheerpjDisplay").style.height = '100%';
@@ -81,12 +77,9 @@
         await CheerpjSwingUtils.onResize();
       }
       window.addEventListener("resize", onWindowResize);
-      setProgress(90);
       await CheerpjSwingUtils.launchNoArgs('com.github.Uchida16104.Java.App');
-      setProgress(95);
       document.getElementById('cheerpjDisplay').classList.add('finished-loading');
       await onWindowResize();
-      setProgress(100);
       document.getElementById('content').style.display = 'none';
       document.getElementById('icon-wrapper').style.display = 'none';
       document.getElementById('app-title').style.display = 'none';
