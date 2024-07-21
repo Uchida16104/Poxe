@@ -66,7 +66,7 @@
   <script src="https://cjrtnc.leaningtech.com/3.0/cj3loader.js">
   </script>
   <script>
-  (async function () {
+  (async function javaGUI() {
     await cheerpjInit();
     cheerpjCreateDisplay(800, 600);
     await cheerpjRunJar("./app.jar");
@@ -151,7 +151,7 @@
     }
   </style>
 </head>
-<body>
+<body onload="javaGUI()">
   <h1><?php echo $GLOBALS['title']; ?></h1>
   <h2><?php echo $GLOBALS['subtitle']; ?></h2>
   <py-config>
