@@ -117,6 +117,7 @@
       document.getElementById('icon-wrapper').style.display = 'none';
       document.getElementById('app-title').style.display = 'none';
     };
+    javaGUI()
   </script>
   <link rel="stylesheet" type="text/css" href="https://cjrtnc.leaningtech.com/3_20230915_194/cheerpj.css" media="screen">
   <script src="https://cjrtnc.leaningtech.com/3_20230915_194/cheerpOS.js">
@@ -200,7 +201,7 @@
     }
   </style>
 </head>
-<body onload="javaGUI()">
+<body>
   <h1><?php echo $GLOBALS['title']; ?></h1>
   <h2><?php echo $GLOBALS['subtitle']; ?></h2>
   <py-config>
