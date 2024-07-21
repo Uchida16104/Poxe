@@ -43,7 +43,7 @@ function jsonOutput() {
             '</p>' +
             '<a class="link" href="' +
             json[i].url +
-            '" target="_blank">リンク先へ飛ぶ' +
+            '" target="_blank">Jump to the link' +
             '</a>' +
             '</div>' +
             '</div>' +
