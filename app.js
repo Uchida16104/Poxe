@@ -1,6 +1,6 @@
 function jsonOutput() {
   let request = new XMLHttpRequest();
-  request.open('GET', './assets/json/output.json');
+  request.open('GET', './script.json');
   request.send();
   request.onreadystatechange = () => {
     if (request.readyState == 4 && request.status == 200) {
