@@ -1,5 +1,5 @@
 {
-  "install": "composer install && npm install express sqlite3 fs path module commander",
+  "install": "composer install && apt-get install -y nodejs && npm install express sqlite3 fs path module commander",
   "start": "php -S 0.0.0.0:8080 && node server.js",
   "watch": {
     "ignore": [
