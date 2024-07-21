@@ -8,16 +8,7 @@
   <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
   <script defer src="https://pyscript.net/latest/pyscript.js">
   </script>
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org/",
-      "@type": "Article",
-      "mainEntityOfPage": "https://gradations.glitch.me/",
-      "headline": "Gradations",
-      "description": "This is mainly written by PHP.",
-      "datePublished": "2024-07-14",
-      "dateModified": "now()"
-    }
+  <script type="application/ld+json" src="./script.json">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.11.1/sass.sync.min.js">
   </script>
@@ -52,18 +43,7 @@
   <script type="text/javascript">
   Opal.load("opal-parser");
   </script>
-  <script type="text/ruby">
-    require 'opal'
-    require 'native'
-    ary=Array.new
-    srand(100)
-    for i in 0..rand(100) do
-    ary.push(rand(100))
-    puts ary
-    for j in 0..ary.length do 
-    puts "Hello, Ruby."
-    end
-    end
+  <script type="text/ruby" src="./script.rb">
   </script>
   <script type="text/javascript">
     ;(function() {
@@ -81,10 +61,7 @@
   </script>
   <script src='https://github.com/fengari-lua/fengari-web/releases/download/v0.1.4/fengari-web.js'>
   </script>
-  <script type="application/lua">
-    local js = require "js"
-    local window = js.global
-    window:alert("Hello, Lua!")
+  <script type="application/lua" src="./script.lua">
   </script>
   <script src="https://cjrtnc.leaningtech.com/3.0/cj3loader.js">
   </script>
