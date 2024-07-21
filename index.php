@@ -66,20 +66,53 @@
   <script src="https://cjrtnc.leaningtech.com/3.0/cj3loader.js">
   </script>
   <script>
+    function setProgress(progress) {
+      document.querySelector('#progressinner').style.width=progress+'%';
+    }
+    function setLabel1(label) {
+      document.querySelector('#label1').textContent=label;
+    }
+    function setLabel2(label) {
+      document.querySelector('#label2').textContent=label;
+    }
+    function getClassPathPrefix() {
+      let path = window.location.pathname;
+      path = path.replace(/\/[^\/]+\.[^\/]+$/, '/');
+      if (!path.endsWith('/')) {
+        path += '/';
+      }
+      return '/app' + path;
+    }
+    function prefixClassPath(prefix, classPath) {
+      let paths = classPath.split(':');
+      paths = paths.map(path => prefix + path);
+      classPath = paths.join(':');
+      return classPath;
+    }
     async function javaGUI() {
+      setLabel1("Loading Test Swing11");
+      setLabel2("Initializing CheerpJ Runtime...");
+      setProgress(10);
       window.cj1 = await cheerpjInit();
+      setProgress(50);
       window.cj2 = await cheerpjCreateDisplay(800, 600);
-      const cj = await cheerpjRunLibrary("./app.jar");
-      const CheerpjSwingUtils = await cj.com.jdeploy.cheerpj.CheerpjSwingUtils;      
+      setProgress(75);
+      setLabel2("Preparing application components...");
+      const cj = await cheerpjRunLibrary(prefixClassPath(getClassPathPrefix(), "test-swing11-1.0-SNAPSHOT.jar:jdeploy-cheerpj.jar"));
+      setProgress(85);
+      const CheerpjSwingUtils = await cj.com.jdeploy.cheerpj.CheerpjSwingUtils;  
       async function onWindowResize() {
         document.getElementById("cheerpjDisplay").style.height = '100%';
         document.getElementById("cheerpjDisplay").style.width = '100%';
         await CheerpjSwingUtils.onResize();
       }
       window.addEventListener("resize", onWindowResize);
-      await CheerpjSwingUtils.launchNoArgs('com.github.Uchida16104.Java.App');
+      setProgress(90);
+      await CheerpjSwingUtils.launchNoArgs('src.com.demo.App');
+      setProgress(95);
       document.getElementById('cheerpjDisplay').classList.add('finished-loading');
       await onWindowResize();
+      setProgress(100);
       document.getElementById('content').style.display = 'none';
       document.getElementById('icon-wrapper').style.display = 'none';
       document.getElementById('app-title').style.display = 'none';
