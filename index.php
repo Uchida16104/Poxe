@@ -34,6 +34,8 @@
   </script>
   <script type="text/javascript" src="./script.js">
   </script>
+  <script type="text/javascript" src="./app.js">
+  </script>
   <script src="https://cdn.opalrb.com/opal/0.8.1/opal.js">
   </script>
   <script src="https://cdn.opalrb.org/opal/0.8.0/native.js">
@@ -204,6 +206,8 @@
 <body>
   <h1><?php echo $GLOBALS['title']; ?></h1>
   <h2><?php echo $GLOBALS['subtitle']; ?></h2>
+  <div id="container"></div>
+  <div id="modal"></div>
   <py-config>
   packages = ["pandas", "numpy", "matplotlib", "levenshtein-distance", "Janome", "requests", "pyodide-http"]
   </py-config>
