@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
             let html = `
                 <p>Published date: ${jsonData.datePublished}</p>
                 <p>Website: <a href="${jsonData.mainEntityOfPage}" target="_blank">${jsonData.mainEntityOfPage}</a></p>
-            `;            document.getElementById('content').innerHTML = html;
+            `;            
+document.getElementById('content').innerHTML = html;
         }
     };
 });
