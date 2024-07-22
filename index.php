@@ -34,6 +34,8 @@
   </script>
   <script type="text/javascript" src="./script.js">
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/4.7.4/typescript.min.js">
+  </script>
   <script type="text/javascript" src="./app.js">
   </script>
   <script src="https://cdn.opalrb.com/opal/0.8.1/opal.js">
