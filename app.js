@@ -4,7 +4,20 @@ document.addEventListener("DOMContentLoaded", function() {
     request.send();
     request.onreadystatechange = function() {
         if (request.readyState === 4 && request.status === 200) {
-            let jsonData = JSON.parse(request.responseText);            console.log(JSON.stringify(jsonData));
+            let jsonData = JSON.parse(request.responseText);            
+            console.log(JSON.stringify(jsonData));
         }
     };
+});
+window.addEventListener("DOMContentLoaded", function() {
+    fetch('./script.ts')
+        .then(response => response.text())
+        .then(tsCode => {
+            const jsCode = ts.transpile(tsCode);
+            const scriptElement = document.createElement('script');
+            scriptElement.type = 'module';
+            scriptElement.text = jsCode;
+            document.body.appendChild(scriptElement);
+        })
+        .catch(error => console.error('Error loading TypeScript file:', error));
 });
