@@ -18,5 +18,5 @@ jobs:
         GLITCH_PROJECT_ID: ${{ secrets.GLITCH_PROJECT_ID }}
         GLITCH_SECRET: ${{ secrets.GLITCH_SECRET }}
       run: |
-        git remote add glitch https://api.glitch.com/git/${GLITCH_PROJECT_ID}
+        git remote add glitch https://api.glitch.com/git/somsoc
         git push glitch main --force
