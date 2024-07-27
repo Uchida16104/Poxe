@@ -15,5 +15,5 @@ jobs:
 
     - name: Sync with Glitch
       run: |
-        git remote add glitch https://api.glitch.com/git/somsoc
+        git remote add glitch https://de008625-dd23-41d0-9861-222fb406bd15@api.glitch.com/git/somsoc
         git push glitch main --force
