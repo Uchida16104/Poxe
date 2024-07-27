@@ -1,0 +1,22 @@
+name: Deploy to Glitch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Sync with Glitch
+      env:
+        GLITCH_PROJECT_ID: ${{ secrets.GLITCH_PROJECT_ID }}
+        GLITCH_SECRET: ${{ secrets.GLITCH_SECRET }}
+      run: |
+        git remote add glitch https://api.glitch.com/git/${GLITCH_PROJECT_ID}
+        git push glitch main --force
