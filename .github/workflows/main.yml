@@ -14,9 +14,6 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Sync with Glitch
-      env:
-        GLITCH_PROJECT_ID: ${{ secrets.GLITCH_PROJECT_ID }}
-        GLITCH_SECRET: ${{ secrets.GLITCH_SECRET }}
       run: |
         git remote add glitch https://api.glitch.com/git/somsoc
         git push glitch main --force
