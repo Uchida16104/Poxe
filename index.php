@@ -157,18 +157,6 @@
   $GLOBALS['animation'] = rand(0, 100);
   $GLOBALS['time'] = rand(0, 600);
   ?>
-　<?php
-　$servername = getenv('DB_SERVER');
-　$port = getenv('DB_PORT');
-　$username = getenv('DB_USERNAME');
-　$password = getenv('DB_PASSWORD');
-　$dbname = getenv('DB_DATABASE');
-　$conn = new mysqli($servername, $username, $password, $dbname, $port);
-　if ($conn->connect_error) {
-  　  die("Connection failed: " . $conn->connect_error);
-　}
-　echo "Connected successfully";
-　?>
   <title>
     <?php echo $GLOBALS['title']; ?>
   </title>
