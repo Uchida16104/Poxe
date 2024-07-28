@@ -1,6 +1,6 @@
 {
   "install": "composer install && apt-get install -y nodejs && npm install express sqlite3 fs path module commander",
-  "start": "php -S 0.0.0.0:8080 && node server.js && bash lamp-start.sh && mysql -u root && SOURCE db.sql",
+  "start": "php -S 0.0.0.0:8080 && node server.js && bash aiven.sh && bash lamp-start.sh && mysql -u root && SOURCE db.sql",
   "watch": {
     "ignore": [
       "logs"
