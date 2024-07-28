@@ -1,4 +1,15 @@
-<IfModule mod_rewrite.c>
+RedirectMatch 403 /\.apache2
+RedirectMatch 403 /\.mysql
+RedirectMatch 403 /\.mysql_history
+RedirectMatch 403 /\.git
 RewriteEngine On
 RewriteRule ^info$ info.php [L]
-</IfModule>
+RewriteRule ^([^/]+)$ $1.php [L]
+<Files "php.ini">  
+  Order Allow,Deny
+  Deny from all
+</Files>
+<Files ".env">  
+  Order Allow,Deny
+  Deny from all
+</Files>
