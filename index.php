@@ -1,3 +1,28 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "glitch";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+if(isset($_POST["dream"]))
+{
+  $dream = htmlspecialchars($_POST["dream"]);
+  $epoch = time();
+  $stmt = $conn->prepare("INSERT INTO dreams (dream, epoch) VALUES (?, ?)");
+  $stmt->bind_param("si", $dream, $epoch);
+  $stmt->execute();
+  $stmt->close();
+}
+if(isset($_GET["clear"]))
+{
+  $sql = "DELETE FROM dreams WHERE 1=1";
+  $result = $conn->query($sql);
+  die(header("Location: /"));
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +54,8 @@
   <script src="https://unpkg.com/wisp@0.13.0/wisp.js">
   </script>
   <script type="application/wisp" src="./script.wisp">
+  </script>
+  <script type="text/javascript" src="./client.js" defer>
   </script>
   <script type="text/javascript" src="./server.js">
   </script>
