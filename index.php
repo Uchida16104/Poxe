@@ -219,6 +219,7 @@
   <h3>Scroll</h3>
   <canvas id="scrollable"></canvas>
   <h4>The PHPINFO page is <a href="./info.php">here</a></h4>
+  <h4>The MYSQL CONNECTION RESULT page is <a href="./connection.php">here</a></h4>
   <h5>Document for
   <ul>
   <li><a href="https://github.com/Uchida16104/Gradations">GitHub</a></li>
