@@ -1,27 +1,14 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "glitch";
-$conn = new mysqli($servername, $username, $password, $dbname);
+$servername = getenv('DB_SERVER');
+$port = getenv('DB_PORT');
+$username = getenv('DB_USERNAME');
+$password = getenv('DB_PASSWORD');
+$dbname = getenv('DB_DATABASE');
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-if(isset($_POST["dream"]))
-{
-  $dream = htmlspecialchars($_POST["dream"]);
-  $epoch = time();
-  $stmt = $conn->prepare("INSERT INTO dreams (dream, epoch) VALUES (?, ?)");
-  $stmt->bind_param("si", $dream, $epoch);
-  $stmt->execute();
-  $stmt->close();
-}
-if(isset($_GET["clear"]))
-{
-  $sql = "DELETE FROM dreams WHERE 1=1";
-  $result = $conn->query($sql);
-  die(header("Location: /"));
-}
+echo "Connected successfully";
 ?>
 <!DOCTYPE html>
 <html lang="en">
