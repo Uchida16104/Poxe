@@ -24,11 +24,11 @@
     <h1><?php echo $GLOBALS['title']; ?></h1>
     <h2>
     <?php
-　  $servername = getenv('DB_SERVER');
-　  $port = getenv('DB_PORT');
-　  $username = getenv('DB_USERNAME');
-　  $password = getenv('DB_PASSWORD');
-　  $dbname = getenv('DB_DATABASE');
+　  $servername = mysql-uho02741358.e.aivencloud.com;
+　  $port = 27750;
+　  $username = avnadmin;
+　  $password = AVNS_VQjeR3X7mMJJXQWC8nL;
+　  $dbname = defaultdb;
 　  $conn = new mysqli($servername, $username, $password, $dbname, $port);
   　if ($conn->connect_error) {
     　  echo die($GLOBALS['error'] . $conn->connect_error);
