@@ -223,7 +223,7 @@
   <h5>Document for
   <ul>
   <li><a href="https://github.com/Uchida16104/Gradations">GitHub</a></li>
-  <li><a href="https://glitch.com/~gradations">Glitch</a></li>
+  <li><a href="https://glitch.com/~somsoc">Glitch</a></li>
   </h5>
   <p>Written by <a href="https://lit.link/hirotoshiuchida">Hirotoshi Uchida</a>.</p>
 </body>
