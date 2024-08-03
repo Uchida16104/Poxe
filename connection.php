@@ -16,25 +16,32 @@
     <title>Connection Result</title>
 </head>
 <body>
-    <?php
-    $GLOBALS['title'] = 'Connection Result';
-    $GLOBALS['error'] = 'Connection failed: ';
-    $GLOBALS['success'] = 'Connected successfully';
-    ?>
-    <h1><?php echo $GLOBALS['title']; ?></h1>
     <h2>
     <?php
-　  $servername = mysql-uho02741358.e.aivencloud.com;
-　  $port = 27750;
-　  $username = avnadmin;
-　  $password = AVNS_VQjeR3X7mMJJXQWC8nL;
-　  $dbname = defaultdb;
-　  $conn = new mysqli($servername, $username, $password, $dbname, $port);
-  　if ($conn->connect_error) {
-    　  echo die($GLOBALS['error'] . $conn->connect_error);
-  　}
-  　echo $GLOBALS['success'];
+    $servername = "localhost";
+    $username = "root";
+    $password = "password";
+    $dbname = "mydatabase";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $sql = file_get_contents("./db.sql");
+    if ($conn->multi_query($sql) === TRUE) {
+        echo "SQL file executed successfully<br>";
+    } else {
+        echo "Error executing SQL file: " . $conn->error . "<br>";
+    }
+    $result = $conn->query("SELECT * FROM users");
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Email: " . $row["email"]. "<br>";
+        }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
     ?>
-   </h2>
+    </h2>
 </body>
 </html>
