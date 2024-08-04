@@ -130,6 +130,7 @@
   </script>
   <?php
   $GLOBALS['title'] = 'Esab';
+  $GLOBALS['title_lower'] = strtolower($GLOBALS['title']);
   $GLOBALS['subtitle'] = 'by PHP';
   $GLOBALS['h1'] = rand(36, 40);
   $GLOBALS['h2'] = rand(31, 35);
@@ -222,8 +223,8 @@
   <h4>The MYSQL CONNECTION RESULT page is <a href="./connection.php">here</a></h4>
   <h5>Document for
   <ul>
-  <li><a href="https://github.com/Uchida16104/Gradations">GitHub</a></li>
-  <li><a href="https://glitch.com/~somsoc">Glitch</a></li>
+  <li><a href="https://github.com/Uchida16104/<?php echo $GLOBALS['title']; ?>">GitHub</a></li>
+  <li><a href="<?php echo "https://glitch.com/~".$GLOBALS['title_lower']; ?>">Glitch</a></li>
   </h5>
   <p>Written by <a href="https://lit.link/hirotoshiuchida">Hirotoshi Uchida</a>.</p>
 </body>
