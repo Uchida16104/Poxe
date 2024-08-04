@@ -1,6 +1,6 @@
 {
   "install": "composer install && apt-get update && apt-get install -y nodejs mysql-server mysql-client && npm install express sqlite3 fs path module commander",
-  "start": "php -S 0.0.0.0:8080 && node server.js && bash aiven.sh && bash lamp-start.sh && service mysql status && mysql_secure_installation && mysql -u root && SOURCE db.sql && chown -R www-data:www-data /app && chmod -R 755 /app && service apache2 start",
+  "start": "php -S 0.0.0.0:8080 && node server.js && bash aiven.sh && bash lamp-start.sh && service mysql status && mysql_secure_installation && mysql -u root && SOURCE db.sql && chown -R www-data:www-data /app && chmod -R 755 /app && chmod 600 ./ca-cert.pem && service apache2 start",
   "watch": {
     "ignore": [
       "logs"
