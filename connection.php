@@ -19,23 +19,22 @@
     <h2>
     <?php
     $host = 'mysql-uho02741358.e.aivencloud.com';
-    $port = 27750;
+    $port = '27750';
     $dbname = 'defaultdb';
-    $user = 'avnadmin';
+    $username = 'avnadmin';
     $password = 'AVNS_VQjeR3X7mMJJXQWC8nL';
-    $ssl_ca = __DIR__ . '/ca.pem';
+    $ssl_mode = 'REQUIRED';
+    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
+    $options = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::MYSQL_ATTR_SSL_CA => './ca-cert.pem',
+    ];
     try {
-        $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
-        $options = [
-            PDO::MYSQL_ATTR_SSL_CA => $ssl_ca,
-            PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        ];
-        $pdo = new PDO($dsn, $user, $password, $options);
-        echo "Connection successful!";
+        $pdo = new PDO($dsn, $username, $password, $options);
+        echo "Connected successfully!";
     } catch (PDOException $e) {
-        die("Connection failed: " . $e->getMessage());
+        echo "Connection failed: " . $e->getMessage();
     }
     ?>
     </h2>
