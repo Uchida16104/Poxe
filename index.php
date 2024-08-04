@@ -129,7 +129,7 @@
   <script src="https://cjrtnc.leaningtech.com/3_20230915_194/cheerpOS.js">
   </script>
   <?php
-  $GLOBALS['title'] = 'Somsoc';
+  $GLOBALS['title'] = 'Esab';
   $GLOBALS['subtitle'] = 'by PHP';
   $GLOBALS['h1'] = rand(36, 40);
   $GLOBALS['h2'] = rand(31, 35);
