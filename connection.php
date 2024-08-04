@@ -18,29 +18,24 @@
 <body>
     <h2>
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "password";
-    $dbname = "mydatabase";
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    $host = 'mysql-uho02741358.e.aivencloud.com';
+    $port = 27754;
+    $dbname = 'defaultdb';
+    $user = 'avnadmin';
+    $password = 'AVNS_VQjeR3X7mMJJXQWC8nL';
+    $ssl_ca = __DIR__ . '/ca.pem';
+    try {
+        $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
+        $options = [
+            PDO::MYSQL_ATTR_SSL_CA => $ssl_ca,
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        ];
+        $pdo = new PDO($dsn, $user, $password, $options);
+        echo "Connection successful!";
+    } catch (PDOException $e) {
+        die("Connection failed: " . $e->getMessage());
     }
-    $sql = file_get_contents("./db.sql");
-    if ($conn->multi_query($sql) === TRUE) {
-        echo "SQL file executed successfully<br>";
-    } else {
-        echo "Error executing SQL file: " . $conn->error . "<br>";
-    }
-    $result = $conn->query("SELECT * FROM users");
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Email: " . $row["email"]. "<br>";
-        }
-    } else {
-        echo "0 results";
-    }
-    $conn->close();
     ?>
     </h2>
 </body>
