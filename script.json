@@ -2,7 +2,7 @@
   "@context": "http://schema.org/",
   "@type": "Article",
   "mainEntityOfPage": "https://somsoc.glitch.me/",
-  "headline": "Somsoc",
+  "headline": "Esab",
   "description": "This is mainly written by PHP.",
   "datePublished": "2024-07-14",
   "dateModified": "now()"
