@@ -19,7 +19,7 @@
     <h2>
     <?php
     $host = 'mysql-uho02741358.e.aivencloud.com';
-    $port = 27754;
+    $port = 27750;
     $dbname = 'defaultdb';
     $user = 'avnadmin';
     $password = 'AVNS_VQjeR3X7mMJJXQWC8nL';
