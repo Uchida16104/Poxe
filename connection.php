@@ -18,25 +18,30 @@
 <body>
     <h2>
     <?php
-    $host = 'mysql-uho02741358.e.aivencloud.com';
-    $port = '27750';
-    $dbname = 'defaultdb';
-    $username = 'avnadmin';
-    $password = 'AVNS_VQjeR3X7mMJJXQWC8nL';
-    $ssl_mode = 'REQUIRED';
-    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
-    $options = [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::MYSQL_ATTR_SSL_CA => './ca-cert.pem',
-    ];
-    try {
-        $pdo = new PDO($dsn, $username, $password, $options);
-        echo "Connected successfully!";
-    } catch (PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
-    }
-    ?>
+require 'vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$host = $_ENV['DB_HOST'];
+$db = $_ENV['DB_NAME'];
+$user = $_ENV['DB_USER'];
+$pass = $_ENV['DB_PASSWORD'];
+$charset = 'utf8mb4';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+$options = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES   => false,
+];
+
+try {
+    $pdo = new PDO($dsn, $user, $pass, $options);
+    echo "Connected to the Aiven MySQL database successfully!";
+} catch (\PDOException $e) {
+    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+}
+?>
     </h2>
 </body>
 </html>
