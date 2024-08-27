@@ -3,6 +3,6 @@
     "phpmyadmin/phpmyadmin": "^4.0",
     "ext-pdo_mysql": "*",
     "php": ">=7.0",
-    "vlucas/phpdotenv": "^5.4"
+    "vlucas/phpdotenv": "^3.6"
   }
 }
