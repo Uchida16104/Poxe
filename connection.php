@@ -38,7 +38,6 @@
     } catch (\PDOException $e) {
         echo "Connection failed: Please check your database credentials and try again.";
         error_log($e->getMessage());
-        throw new \PDOException($e->getMessage(), (int)$e->getCode());
     }
     ?>
     </h2>
