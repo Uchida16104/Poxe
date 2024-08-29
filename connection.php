@@ -21,10 +21,10 @@
     require 'vendor/autoload.php';
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->load();
-    $host = $_ENV['DB_HOST'];
-    $db = $_ENV['DB_NAME'];
-    $user = $_ENV['DB_USER'];
-    $pass = $_ENV['DB_PASSWORD'];
+    $host = $_ENV['DB_HOST'] ?? 'localhost';
+    $db = $_ENV['DB_DATABASE'] ?? 'test';
+    $user = $_ENV['DB_USERNAME'] ?? 'root';
+    $pass = $_ENV['DB_PASSWORD'] ?? '';
     $charset = 'utf8mb4';
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
     $options = [
@@ -36,6 +36,8 @@
         $pdo = new PDO($dsn, $user, $pass, $options);
         echo "Connected to the Aiven MySQL database successfully!";
     } catch (\PDOException $e) {
+        echo "Connection failed: Please check your database credentials and try again.";
+        error_log($e->getMessage());
         throw new \PDOException($e->getMessage(), (int)$e->getCode());
     }
     ?>
