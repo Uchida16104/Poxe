@@ -21,11 +21,11 @@
     require 'vendor/autoload.php';
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->load();
-    $host = $_ENV['DB_HOST'] ?? 'localhost';
-    $db = $_ENV['DB_DATABASE'] ?? 'test';
-    $user = $_ENV['DB_USERNAME'] ?? 'root';
-    $pass = $_ENV['DB_PASSWORD'] ?? '';
-    $port = $_ENV['DB_PORT'] ?? '3306'
+    $host = $_ENV['DB_HOST'];
+    $db = $_ENV['DB_DATABASE'];
+    $user = $_ENV['DB_USERNAME'];
+    $pass = $_ENV['DB_PASSWORD'];
+    $port = $_ENV['DB_PORT']
     $charset = 'utf8mb4';
     $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
     $options = [
