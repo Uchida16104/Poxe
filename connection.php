@@ -22,7 +22,7 @@
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->load();
     $host = $_ENV['DB_HOST'] ?? 'localhost';
-    $db = $_ENV['DB_DATABASE'] ?? 'test';
+    $db = $_ENV['DB_NAME'] ?? 'test';
     $user = $_ENV['DB_USERNAME'] ?? 'root';
     $pass = $_ENV['DB_PASSWORD'] ?? '';
     $port = $_ENV['DB_PORT'] ?? '3306'
