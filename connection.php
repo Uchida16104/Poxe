@@ -71,7 +71,7 @@
             echo $row['username'] . "<br>";
         }
     } catch (PDOException $e) {
-        echo 'Connection failed: ' . $e->getMessage() . "Please check your database credentials and try again.";
+        echo 'Connection failed: ' . $e->getMessage() . "." . " Please check your database credentials and try again.";
         error_log($e->getMessage());
     }
     ?>
