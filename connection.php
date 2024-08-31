@@ -37,7 +37,7 @@
         $pdo = new PDO($dsn, $user, $pass, $options);
         echo "Connected to the Aiven MySQL database successfully!";
         $stmt = $pdo->prepare('SHOW DATABASES; USE defaultdb; CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL, email VARCHAR(100), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP); INSERT INTO users (username, email) VALUES ('jane', 'jane@example.com'), ('alice', 'alice@example.com'); DESCRIBE users; SELECT * FROM users;');
-        $stmt->execute(['value' => 'example_value']);
+        $stmt->execute(['email' => 'alice@example.com']);
         $rows = $stmt->fetchAll();
         foreach ($rows as $row) {
             echo $row['username'] . "<br>";
