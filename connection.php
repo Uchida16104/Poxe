@@ -24,11 +24,11 @@
     require 'vendor/autoload.php';
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->load();
-    $host = $_ENV['DB_HOST'];
-    $db = $_ENV['DB_DATABASE'];
-    $user = $_ENV['DB_USERNAME'];
-    $pass = $_ENV['DB_PASSWORD'];
-    $port = $_ENV['DB_PORT']
+    $host = 'mysql-uho02741358.e.aivencloud.com';
+    $db = 'defaultdb';
+    $user = 'avnadmin';
+    $pass = 'AVNS_VQjeR3X7mMJJXQWC8nL';
+    $port = '27750';
     $charset = 'utf8mb4';
     $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
     $options = [
