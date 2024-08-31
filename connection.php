@@ -40,9 +40,33 @@
         $pdo = new PDO($dsn, $user, $pass, $options);
         echo "Connected to the Aiven MySQL database successfully!";
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $stmt = $pdo->prepare('SHOW DATABASES; USE defaultdb; CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL, email VARCHAR(100), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP); INSERT INTO users (username, email) VALUES ('jane', 'jane@example.com'), ('alice', 'alice@example.com'); DESCRIBE users; SELECT * FROM users;');
-        $stmt->execute(['email' => 'alice@example.com']);
-        $rows = $stmt->fetchAll();
+        $stmt = $pdo->query('SHOW DATABASES');
+        $databases = $stmt->fetchAll();
+        print_r($databases);
+        $pdo->exec('USE defaultdb');
+        $createTableSQL = 'CREATE TABLE IF NOT EXISTS users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(50) NOT NULL,
+        email VARCHAR(100),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )';
+        $pdo->exec($createTableSQL);
+        $insertDataSQL = 'INSERT INTO users (username, email) VALUES
+        (:username1, :email1),
+        (:username2, :email2)';
+        $stmt = $pdo->prepare($insertDataSQL);
+        $stmt->execute([
+        ':username1' => 'jane',
+        ':email1' => 'jane@example.com',
+        ':username2' => 'alice',
+        ':email2' => 'alice@example.com'
+        ]);
+        $stmt = $pdo->query('DESCRIBE users');
+        $tableStructure = $stmt->fetchAll();
+        print_r($tableStructure);
+        $stmt = $pdo->query('SELECT * FROM users');
+        $users = $stmt->fetchAll();
+        print_r($users);
         foreach ($rows as $row) {
             echo $row['username'] . "<br>";
         }
