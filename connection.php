@@ -40,7 +40,7 @@
         $pdo = new PDO($dsn, $user, $pass, $options);
         echo "Connected to the Aiven MySQL database successfully!";
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $stmt = $pdo->query('SHOW DATABASES');
+        $stmt = $pdo->query('SOURCE db.sql; SHOW DATABASES;');
         $databases = $stmt->fetchAll();
         print_r($databases);
         $pdo->exec('USE defaultdb');
