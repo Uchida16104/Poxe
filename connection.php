@@ -18,6 +18,9 @@
 <body>
     <h2>
     <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     require 'vendor/autoload.php';
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->load();
@@ -36,16 +39,17 @@
     try {
         $pdo = new PDO($dsn, $user, $pass, $options);
         echo "Connected to the Aiven MySQL database successfully!";
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $stmt = $pdo->prepare('SHOW DATABASES; USE defaultdb; CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL, email VARCHAR(100), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP); INSERT INTO users (username, email) VALUES ('jane', 'jane@example.com'), ('alice', 'alice@example.com'); DESCRIBE users; SELECT * FROM users;');
         $stmt->execute(['email' => 'alice@example.com']);
         $rows = $stmt->fetchAll();
         foreach ($rows as $row) {
             echo $row['username'] . "<br>";
         }
-        } catch (\PDOException $e) {
-            echo "Connection failed: Please check your database credentials and try again.";
-            error_log($e->getMessage());
-        }
+    } catch (PDOException $e) {
+        echo 'Connection failed: ' . $e->getMessage() . "Please check your database credentials and try again.";
+        error_log($e->getMessage());
+    }
     ?>
     </h2>
 </body>
