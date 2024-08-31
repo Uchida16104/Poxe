@@ -1,5 +1,5 @@
 {
-  "install": "composer clear-cache && composer self-update --2 && composer install && apt-get update && apt-get install -y nodejs mysql-server mysql-client && npm install express sqlite3 fs path module commander",
+  "install": "composer clear-cache && composer self-update --2 && composer install && composer require vlucas/phpdotenv && apt-get update && apt-get install -y nodejs mysql-server mysql-client && npm install express sqlite3 fs path module commander",
   "start": "php -S 0.0.0.0:8080 && node server.js && bash aiven.sh && bash lamp-start.sh && service mysql status && mysql_secure_installation && mysql --protocol=tcp -h 127.0.0.1 -P 3306 -u root -proot_password -e 'source db.sql' && chown -R www-data:www-data /app && chmod -R 755 /app && chmod 600 ./ca-cert.pem && service apache2 start",
   "watch": {
     "ignore": [
