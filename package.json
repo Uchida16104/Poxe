@@ -1,43 +1,43 @@
 {
-  "name": "sql-launcher",
-  "version": "1.0.0",
-  "main": "server.js",
-  "type": "module",
-  "scripts": {
-    "start": "node server.js"
+  "name:first": "sql-launcher",
+  "version:first": "1.0.0",
+  "main:first": "server.js",
+  "type:first": "module",
+  "scripts:first": {
+    "start:first": "node server.js"
   },
-  "dependencies": {
-    "express": "^4.17.1",
-    "sqlite3": "^5.0.0"
+  "dependencies:first": {
+    "express:first": "^4.17.1",
+    "sqlite3:first": "^5.0.0"
   }
 }
 {
-  "name": "Maxe",
-  "version": "0.0.1",
-  "description": "This is mainly written by PHP.",
-  "main": "index.php",
-  "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
-    "setup": "fastly service create --name=$PROJECT_DOMAIN",
-    "publish": "FASTLY_SERVICE_ID=$(cat .env | grep FASTLY_SERVICE_ID= | cut -d '=' -f2) && fastly backend create --version latest --name=origin_0 --address=$PROJECT_DOMAIN.glitch.me --autoclone --service-id=$FASTLY_SERVICE_ID && fastly domain create --version latest --name=$PROJECT_DOMAIN.global.ssl.fastly.net --autoclone --service-id=$FASTLY_SERVICE_ID && fastly service-version activate --version latest --autoclone --service-id=$FASTLY_SERVICE_ID"
+  "name:second": "Maxe",
+  "version:second": "0.0.1",
+  "description:second": "This is mainly written by PHP.",
+  "main:second": "index.php",
+  "scripts:second": {
+    "start:second": "vite",
+    "build:second": "vite build",
+    "serve:second": "vite preview",
+    "setup:second": "fastly service create --name=$PROJECT_DOMAIN",
+    "publish:second": "FASTLY_SERVICE_ID=$(cat .env | grep FASTLY_SERVICE_ID= | cut -d '=' -f2) && fastly backend create --version latest --name=origin_0 --address=$PROJECT_DOMAIN.glitch.me --autoclone --service-id=$FASTLY_SERVICE_ID && fastly domain create --version latest --name=$PROJECT_DOMAIN.global.ssl.fastly.net --autoclone --service-id=$FASTLY_SERVICE_ID && fastly service-version activate --version latest --autoclone --service-id=$FASTLY_SERVICE_ID"
   },
-  "devDependencies": {
-    "vite": "^4.0.0"
+  "devDependencies:second": {
+    "vite:second": "^4.0.0"
   },
-  "browserslist": [
+  "browserslist:second": [
     ">0.2%",
     "not dead"
   ],
-  "engines": {
-    "node": "16.x"
+  "engines:second": {
+    "node:second": "16.x"
   },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/maxe"
+  "repository:second": {
+    "url:second": "https://glitch.com/edit/#!/maxe"
   },
   "glitch": {
-    "projectType": "generated_static"
+    "projectType:second": "generated_static"
   },
-  "author": "Hirotoshi Uchida <uho02741358@gmail.com>"
+  "author:second": "Hirotoshi Uchida <uho02741358@gmail.com>"
 }
