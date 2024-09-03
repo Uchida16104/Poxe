@@ -11,3 +11,33 @@
     "sqlite3": "^5.0.0"
   }
 }
+{
+  "name": "Maxe",
+  "version": "0.0.1",
+  "description": "This is mainly written by PHP.",
+  "main": "index.php",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "setup": "fastly service create --name=$PROJECT_DOMAIN",
+    "publish": "FASTLY_SERVICE_ID=$(cat .env | grep FASTLY_SERVICE_ID= | cut -d '=' -f2) && fastly backend create --version latest --name=origin_0 --address=$PROJECT_DOMAIN.glitch.me --autoclone --service-id=$FASTLY_SERVICE_ID && fastly domain create --version latest --name=$PROJECT_DOMAIN.global.ssl.fastly.net --autoclone --service-id=$FASTLY_SERVICE_ID && fastly service-version activate --version latest --autoclone --service-id=$FASTLY_SERVICE_ID"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead"
+  ],
+  "engines": {
+    "node": "16.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/maxe"
+  },
+  "glitch": {
+    "projectType": "generated_static"
+  },
+  "author": "Hirotoshi Uchida <uho02741358@gmail.com>"
+}
