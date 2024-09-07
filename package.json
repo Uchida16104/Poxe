@@ -18,8 +18,8 @@
     "start:second": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "setup": "fastly service create --name=$PROJECT_DOMAIN",
-    "publish": "FASTLY_SERVICE_ID=$(cat .env | grep FASTLY_SERVICE_ID= | cut -d '=' -f2) && fastly backend create --version latest --name=origin_0 --address=$PROJECT_DOMAIN.glitch.me --autoclone --service-id=$FASTLY_SERVICE_ID && fastly domain create --version latest --name=$PROJECT_DOMAIN.global.ssl.fastly.net --autoclone --service-id=$FASTLY_SERVICE_ID && fastly service-version activate --version latest --autoclone --service-id=$FASTLY_SERVICE_ID"
+    "setup": "fastly service create --name=maxe",
+    "publish": "FASTLY_SERVICE_ID=$(cat .env | grep FASTLY_SERVICE_ID= | cut -d '=' -f2) && fastly backend create --version latest --name=origin_0 --address=maxe.glitch.me --autoclone --service-id=$FASTLY_SERVICE_ID && fastly domain create --version latest --name=maxe.global.ssl.fastly.net --autoclone --service-id=$FASTLY_SERVICE_ID && fastly service-version activate --version latest --autoclone --service-id=$FASTLY_SERVICE_ID"
   },
   "devDependencies": {
     "vite": "^4.0.0"
