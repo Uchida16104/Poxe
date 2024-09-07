@@ -129,7 +129,7 @@
   <script src="https://cjrtnc.leaningtech.com/3_20230915_194/cheerpOS.js">
   </script>
   <?php
-  $GLOBALS['title'] = 'Maxe';
+  $GLOBALS['title'] = 'Poxe';
   $GLOBALS['title_lower'] = strtolower($GLOBALS['title']);
   $GLOBALS['subtitle'] = 'by PHP';
   $GLOBALS['h1'] = rand(36, 40);
