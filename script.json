@@ -1,8 +1,8 @@
 {
   "@context": "http://schema.org/",
   "@type": "Article",
-  "mainEntityOfPage": "https://somsoc.glitch.me/",
-  "headline": "Maxe",
+  "mainEntityOfPage": "https://poxe.global.ssl.fastly.net/",
+  "headline": "Poxe",
   "description": "This is mainly written by PHP.",
   "datePublished": "2024-08-30",
   "dateModified": "now()"
