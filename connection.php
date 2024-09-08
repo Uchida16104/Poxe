@@ -33,7 +33,7 @@
         PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
     ];
     try {
-        $pdo = new PDO("$dsn", 'avnadmin', 'AVNS_VQjeR3X7mMJJXQWC8nL', "$options");
+        $pdo = new PDO($dsn, 'avnadmin', 'AVNS_VQjeR3X7mMJJXQWC8nL', $options);
         echo "Connected to the Aiven MySQL database successfully!";
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $stmt = $pdo->query('SOURCE ./db.sql; SHOW DATABASES;');
