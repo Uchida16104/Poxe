@@ -24,7 +24,13 @@
     //require 'vendor/autoload.php';
     //$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     //$dotenv->load();
-    $dsn = "mysql:host=mysql-uho02741358.e.aivencloud.com;port=27750;dbname=defaultdb;charset=utf8mb4";
+    $host = 'mysql-uho02741358.e.aivencloud.com';
+    $db = 'defaultdb';
+    $user = 'avnadmin';
+    $pass = 'AVNS_VQjeR3X7mMJJXQWC8nL';
+    $port = '27750';
+    $charset = 'utf8mb4';
+    $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
     $options = [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -33,7 +39,7 @@
         PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
     ];
     try {
-        $pdo = new PDO($dsn, 'avnadmin', 'AVNS_VQjeR3X7mMJJXQWC8nL', $options);
+        $pdo = new PDO($dsn, $user, $pass, $options);
         echo "Connected to the Aiven MySQL database successfully!";
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $stmt = $pdo->query('SOURCE ./db.sql; SHOW DATABASES;');
