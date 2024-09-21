@@ -24,11 +24,11 @@
     //require 'vendor/autoload.php';
     //$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     //$dotenv->load();
-    $host = 'mysql-uho02741358.e.aivencloud.com';
-    $db = 'defaultdb';
-    $user = 'avnadmin';
-    $pass = 'AVNS_VQjeR3X7mMJJXQWC8nL';
-    $port = '27750';
+    $host = 'sql12.freesqldatabase.com';
+    $db = 'sql12732575';
+    $user = 'sql12732575';
+    $pass = 'anq5vMnmJf';
+    $port = '3306';
     $charset = 'utf8mb4';
     $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
     $options = [
@@ -45,7 +45,7 @@
         $stmt = $pdo->query('SOURCE ./db.sql; SHOW DATABASES;');
         $databases = $stmt->fetchAll();
         print_r($databases);
-        $pdo->exec('USE defaultdb');
+        $pdo->exec('USE sql12732575');
         $createTableSQL = 'CREATE TABLE IF NOT EXISTS users (
         id INT AUTO_INCREMENT PRIMARY KEY,
         username VARCHAR(50) NOT NULL,
