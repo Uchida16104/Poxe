@@ -1,4 +1,4 @@
-ALTER USER 'avnadmin'@'%' IDENTIFIED WITH mysql_native_password BY 'AVNS_VQjeR3X7mMJJXQWC8nL';
+ALTER USER 'sql12732575'@'%' IDENTIFIED WITH mysql_native_password BY 'anq5vMnmJf';
 FLUSH PRIVILEGES;
 USE defaultdb;
 create table dreams(
