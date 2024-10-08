@@ -220,6 +220,10 @@
 <body>
   <h1><?php echo $GLOBALS['title']; ?></h1>
   <h2><?php echo $GLOBALS['subtitle']; ?></h2>
+  <?php
+  $output = shell_exec('perl script.pl');
+  echo "<pre>$output</pre>";
+  ?>
   <div id="container"></div>
   <div id="modal"></div>
   <py-config>
