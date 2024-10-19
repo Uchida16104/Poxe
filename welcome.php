@@ -11,6 +11,15 @@
     gtag('config', 'G-38606SS5F6');
   </script>
   <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/31566d9c7185e.js" data-cmp-host="a.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                                                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                        })(window,document,'script','dataLayer','GTM-MWTK6627');
+  </script>
+  <!-- End Google Tag Manager -->
   <meta charset='utf-8' />
   <meta name="viewport" , content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" , content="IE=edge" />
@@ -231,10 +240,14 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWTK6627"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <h1><?php echo $GLOBALS['title']; ?></h1>
   <h2><?php echo $GLOBALS['subtitle']; ?></h2>
   <?php
-  $output = shell_exec('perl script.pl');
+  $output = shell_exec('perl script.pl && rustc main.rs && ./main && gcc -o hello hello.c 2>&1 && ./hello 2>&1');
   echo "<pre>$output</pre>";
   ?>
   <div id="container"></div>
