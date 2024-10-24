@@ -7,9 +7,19 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+    
       gtag('config', 'G-38606SS5F6');
     </script>
     <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/31566d9c7185e.js" data-cmp-host="a.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                                                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                          })(window,document,'script','dataLayer','GTM-MWTK6627');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" , content="IE=edge" />
@@ -25,67 +35,56 @@
     <title>Connection Result</title>
 </head>
 <body>
-    <h2>
-    <?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-    //require 'vendor/autoload.php';
-    //$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-    //$dotenv->load();
-    $host = 'sql12.freesqldatabase.com';
-    $db = 'sql12732575';
-    $user = 'sql12732575';
-    $pass = 'anq5vMnmJf';
-    $port = '3306';
-    $charset = 'utf8mb4';
-    $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
-    $options = [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES   => false,
-        PDO::MYSQL_ATTR_SSL_CA => './ca.pem',
-        PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
-    ];
-    try {
-        $pdo = new PDO($dsn, $user, $pass, $options);
-        echo "Connected to the Aiven MySQL database successfully!";
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $stmt = $pdo->query('SOURCE ./db.sql; SHOW DATABASES;');
-        $databases = $stmt->fetchAll();
-        print_r($databases);
-        $pdo->exec('USE sql12732575');
-        $createTableSQL = 'CREATE TABLE IF NOT EXISTS users (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        username VARCHAR(50) NOT NULL,
-        email VARCHAR(100),
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )';
-        $pdo->exec($createTableSQL);
-        $insertDataSQL = 'INSERT INTO users (username, email) VALUES
-        (:username1, :email1),
-        (:username2, :email2)';
-        $stmt = $pdo->prepare($insertDataSQL);
-        $stmt->execute([
-        ':username1' => 'jane',
-        ':email1' => 'jane@example.com',
-        ':username2' => 'alice',
-        ':email2' => 'alice@example.com'
-        ]);
-        $stmt = $pdo->query('DESCRIBE users');
-        $tableStructure = $stmt->fetchAll();
-        print_r($tableStructure);
-        $stmt = $pdo->query('SELECT * FROM users');
-        $users = $stmt->fetchAll();
-        print_r($users);
-        foreach ($rows as $row) {
-            echo $row['username'] . "<br>";
-        }
-    } catch (PDOException $e) {
-        echo 'Connection failed: ' . $e->getMessage() . "." . " Please check your database credentials and try again.";
-        error_log($e->getMessage());
-    }
-    ?>
-    </h2>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWTK6627"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+  <?php
+  $pdo = new PDO('sqlite:my_database.db');
+  if (isset($_GET['delete'])) {
+    $id = $_GET['delete'];
+    $pdo->exec("DELETE FROM users WHERE id=$id");
+    echo "Data deleted successfully!";
+  }
+  
+  if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    
+    $stmt = $pdo->prepare("UPDATE users SET name = ?, email = ? WHERE id = ?");
+    $stmt->execute([$name, $email, $id]);
+    echo "Data updated successfully!";
+  }
+  
+  $stmt = $pdo->query("SELECT * FROM users");
+  $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  ?>
+  <button onclick="location.href='./form.php'">Enter your information into the form</button>
+  <h1>User List</h1>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+    <?php foreach ($users as $user): ?>
+    <tr>
+      <td><?= $user['id'] ?></td>
+      <td><?= $user['name'] ?></td>
+      <td><?= $user['email'] ?></td>
+      <td>
+        <a href="index.php?delete=<?= $user['id'] ?>">Delete</a>
+        <form method="POST" action="connection.php">
+          <input type="hidden" name="id" value="<?= $user['id'] ?>">
+          <input type="text" name="name" value="<?= $user['name'] ?>">
+          <input type="email" name="email" value="<?= $user['email'] ?>">
+          <button type="submit" name="update">Update</button>
+        </form>
+      </td>
+    </tr>
+    <?php endforeach; ?>
+  </table>
 </body>
 </html>
