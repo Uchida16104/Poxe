@@ -259,13 +259,14 @@
   <h3>Scroll</h3>
   <canvas id="scrollable"></canvas>
   <button onclick="location.href='./info.php'">The PHPINFO page</button>
-  <button onclick="location.href='./connection.php'">MYSQL connection result</button>
+  <button onclick="location.href='./form.php'">Enter your information into the form</button>
+  <button onclick="location.href='./connection.php'">SQL connection result</button>
   <button onclick="location.href='./management.php'">BASIC authentication control panel</button>
   <h5>Document for
-  <ul>
-  <li><button onclick="location.href='https://github.com/Uchida16104/<?php echo $GLOBALS['title']; ?>'">GitHub</button></li>
-  <li><button onclick="location.href='<?php echo "https://glitch.com/~".$GLOBALS['title_lower']; ?>'">Glitch</button></li>
-  <li><button onclick="location.href='https://lit.link/hirotoshiuchida'">Hirotoshi Uchida</button>
+    <ul>
+      <li><button onclick="location.href='https://github.com/Uchida16104/<?php echo $GLOBALS['title']; ?>'">GitHub</button></li>
+      <li><button onclick="location.href='<?php echo "https://glitch.com/~".$GLOBALS['title_lower']; ?>'">Glitch</button></li>
+      <li><button onclick="location.href='https://lit.link/hirotoshiuchida'">Hirotoshi Uchida</button>
   </ul>
 </body>
 </html>
