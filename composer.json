@@ -1,6 +1,6 @@
 {
   "require": {
-    "phpmyadmin/phpmyadmin": "^4.0",
+    "phpmyadmin/phpmyadmin": "^5.2",
     "ext-pdo_mysql": "*",
     "php": ">=7.0",
     "vlucas/phpdotenv": "^3.6"
