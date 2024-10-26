@@ -40,52 +40,52 @@
                       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <?php　
-$pdo = new PDO('sqlite:my_database.db');
-if (isset($_GET['delete'])) {
-    $id = (int)$_GET['delete'];
-    $stmt = $pdo->prepare("DELETE FROM users WHERE id = ?");
-    $stmt->execute([$id]);
-    echo "Data deleted successfully!";
-    header("Location: connection.php");
-    exit;
-}
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
-    $id = (int)$_POST['id'];
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $stmt = $pdo->prepare("UPDATE users SET name = ?, email = ? WHERE id = ?");
-    $stmt->execute([$name, $email, $id]);
-    echo "Data updated successfully!";
-    header("Location: connection.php");
-    exit;
-}
-$stmt = $pdo->query("SELECT * FROM users");
-$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>
-<h1>User List</h1>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Actions</th>
-    </tr>
-    <?php foreach ($users as $user): ?>
+    $pdo = new PDO('sqlite:my_database.db');
+    if (isset($_GET['delete'])) {
+        $id = (int)$_GET['delete'];
+        $stmt = $pdo->prepare("DELETE FROM users WHERE id = ?");
+        $stmt->execute([$id]);
+        echo "Data deleted successfully!";
+        header("Location: connection.php");
+        exit;
+    }
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
+        $id = (int)$_POST['id'];
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $stmt = $pdo->prepare("UPDATE users SET name = ?, email = ? WHERE id = ?");
+        $stmt->execute([$name, $email, $id]);
+        echo "Data updated successfully!";
+        header("Location: connection.php");
+        exit;
+    }
+    $stmt = $pdo->query("SELECT * FROM users");
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    ?>
+    <h1>User List</h1>
+    <table>
         <tr>
-            <td><?= htmlspecialchars($user['id']) ?></td>
-            <td><?= htmlspecialchars($user['name']) ?></td>
-            <td><?= htmlspecialchars($user['email']) ?></td>
-            <td>
-                <a href="index.php?delete=<?= htmlspecialchars($user['id']) ?>">Delete</a>
-                <form method="POST" action="connection.php" style="display:inline;">
-                    <input type="hidden" name="id" value="<?= htmlspecialchars($user['id']) ?>">
-                    <input type="text" name="name" value="<?= htmlspecialchars($user['name']) ?>" required>
-                    <input type="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" required>
-                    <button type="submit" name="update">Update</button>
-                </form>
-            </td>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
         </tr>
-    <?php endforeach; ?>
-</table>
+        <?php foreach ($users as $user): ?>
+            <tr>
+                <td><?= htmlspecialchars($user['id']) ?></td>
+                <td><?= htmlspecialchars($user['name']) ?></td>
+                <td><?= htmlspecialchars($user['email']) ?></td>
+                <td>
+                    <a href="index.php?delete=<?= htmlspecialchars($user['id']) ?>">Delete</a>
+                    <form method="POST" action="connection.php" style="display:inline;">
+                        <input type="hidden" name="id" value="<?= htmlspecialchars($user['id']) ?>">
+                        <input type="text" name="name" value="<?= htmlspecialchars($user['name']) ?>" required>
+                        <input type="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" required>
+                        <button type="submit" name="update">Update</button>
+                    </form>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
 </body>
 </html>
