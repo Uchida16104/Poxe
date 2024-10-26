@@ -75,12 +75,12 @@
       <td><?= $user['name'] ?></td>
       <td><?= $user['email'] ?></td>
       <td>
-        <a href="index.php?delete=<?= $user['id'] ?>">Delete</a>
+        <button onclick="location.href='connection.php?delete=<?= $user['id'] ?>'">Delete</button>
         <form method="POST" action="connection.php">
           <input type="hidden" name="id" value="<?= $user['id'] ?>">
           <input type="text" name="name" value="<?= $user['name'] ?>">
           <input type="email" name="email" value="<?= $user['email'] ?>">
-          <button type="submit" name="update">Update</button>
+          <button onclick="location.href='connection.php?update=<?= $user['id'] ?>'">Update</button>
         </form>
       </td>
     </tr>
