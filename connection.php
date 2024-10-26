@@ -80,7 +80,7 @@
           <input type="hidden" name="id" value="<?= $user['id'] ?>">
           <input type="text" name="name" value="<?= $user['name'] ?>">
           <input type="email" name="email" value="<?= $user['email'] ?>">
-          <button onclick="location.href='connection.php?update=<?= $user['id'] ?>'">Update</button>
+          <button type="submit" name="update">Update</button>
         </form>
       </td>
     </tr>
